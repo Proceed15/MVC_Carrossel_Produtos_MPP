@@ -1,0 +1,11 @@
+﻿@model MeuSiteMVC.Models.Produto
+
+@{
+    ViewData["Title"] = "Detalhes do Produto";
+}
+
+<h2>@Model.Nome</h2>
+<p>@Model.Descricao</p>
+<p class="text-success fs-4">R$ @Model.Preco.ToString("N2")</p>
+
+<a href="/Produtos" class="btn btn-secondary">Voltar à vitrine</a>

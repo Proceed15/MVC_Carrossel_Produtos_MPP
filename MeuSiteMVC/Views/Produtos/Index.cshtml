@@ -1,0 +1,27 @@
+﻿@model List<dynamic>
+
+@{
+    ViewData["Title"] = "Produtos";
+}
+
+<h2>Vitrine de Produtos</h2>
+
+@foreach (var grupo in Model)
+{
+    <h3 class="mt-5">@grupo.Categoria.Nome</h3>
+    <div class="row">
+        @foreach (var p in grupo.Produtos)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">@p.Nome</h5>
+                        <p class="card-text">@p.Descricao</p>
+                        <p class="text-primary fw-bold">R$ @p.Preco.ToString("N2")</p>
+                        <a href="/Produtos/Detalhes/@p.Id" class="btn btn-outline-info mt-auto">Ver detalhes</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
