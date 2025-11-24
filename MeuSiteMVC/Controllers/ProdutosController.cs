@@ -7,7 +7,7 @@ namespace MeuSiteMVC.Controllers
     {
         public IActionResult Index()
         {
-            var categoriasComProdutos = DadosEmMemoria.Categorias.Select(c => new
+            var categoriasComProdutos = DadosEmMemoria.Categorias.Select(c => new CategoriaComProdutosViewModel
             {
                 Categoria = c,
                 Produtos = DadosEmMemoria.Produtos.Where(p => p.CategoriaId == c.Id).ToList()

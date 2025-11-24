@@ -7,5 +7,6 @@ namespace MeuSiteMVC.Models
         public string Descricao { get; set; } = string.Empty;
         public decimal Preco { get; set; }
         public int CategoriaId { get; set; }
+        public string ImagemUrl { get; set; } = string.Empty; // Nova propriedade
     }
 }
