@@ -1,16 +1,83 @@
 @model MPP_MVC_Carousel.Models.CategoriaModel
+
 @{
-    ViewData["Title"] = "Gestão de Categorias";
+    ViewData["Title"] = "Excluir Categoria";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
-<h1>Excluir</h1>
 
-@if (ViewBag.ErroExclusao != null)
-{
-    <div class="alert alert-danger">
-        @ViewBag.ErroExclusao
-    </div>
-}
+<div class="container-fluid">
+    <h1 class="h3 mb-4 text-gray-800">Excluir Categoria</h1>
 
-<h3>Tem certeza que deseja excluir isso?</h3>
+    @if (ViewBag.ErroExclusao != null)
+    {
+        <div class="card shadow mb-4 border-left-warning">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-warning">
+                    <i class="fas fa-ban"></i> Ação não permitida
+                </h6>
+            </div>
+            <div class="card-body">
+                <div class="alert alert-danger" role="alert">
+                    <i class="fas fa-exclamation-circle"></i> @ViewBag.ErroExclusao
+                </div>
+                
+                <p>Para manter a integridade da loja, você não pode excluir uma categoria que possui produtos cadastrados.</p>
+                <p><strong>Solução:</strong> Exclua os produtos desta categoria ou mova-os para outra categoria antes de tentar novamente.</p>
 
+                <hr />
+                <a asp-action="Index" class="btn btn-secondary btn-icon-split">
+                    <span class="icon text-white-50">
+                        <i class="fas fa-arrow-left"></i>
+                    </span>
+                    <span class="text">Voltar para Lista</span>
+                </a>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="card shadow mb-4 border-left-danger">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-danger">
+                    <i class="fas fa-exclamation-triangle"></i> Confirmação de Exclusão
+                </h6>
+            </div>
+            <div class="card-body">
+                <h4 class="mb-3">@Model.Nome</h4>
+                
+                <dl class="row">
+                    <dt class="col-sm-2 text-muted">
+                        @Html.DisplayNameFor(model => model.Descricao)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Descricao)
+                    </dd>
+                </dl>
+
+                <div class="alert alert-warning">
+                    <small>Esta ação é permanente e removerá a categoria do sistema.</small>
+                </div>
+
+                <hr />
+                
+                <form asp-action="Delete">
+                    <input type="hidden" asp-for="Id" />
+                    
+                    <button type="submit" class="btn btn-danger btn-icon-split btn-lg">
+                        <span class="icon text-white-50">
+                            <i class="fas fa-trash"></i>
+                        </span>
+                        <span class="text">Sim, Excluir</span>
+                    </button>
+                    
+                    <a asp-action="Index" class="btn btn-secondary btn-icon-split btn-lg ml-2">
+                        <span class="icon text-white-50">
+                            <i class="fas fa-times"></i>
+                        </span>
+                        <span class="text">Cancelar</span>
+                    </a>
+                </form>
+            </div>
+        </div>
+    }
+</div>
