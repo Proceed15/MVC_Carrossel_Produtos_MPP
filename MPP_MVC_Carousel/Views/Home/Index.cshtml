@@ -1,69 +1,81 @@
-﻿@model IEnumerable<MPP_MVC_Carousel.Models.CategoriaModel>
- 
+﻿@using System.Linq
+@model IEnumerable<MPP_MVC_Carousel.Models.CategoriaModel>
+
 @{
     ViewData["Title"] = "Vitrine";
 }
- 
+
 <div class="jumbotron text-center bg-light p-5 mb-5 rounded">
     <h1 class="display-4">Bem-vindo à Loja</h1>
     <p class="lead">As melhores ofertas separadas especialmente para você.</p>
 </div>
- 
+
 @foreach (var categoria in Model)
 {
-    // Só exibe categorias que têm produtos
+    // Só exibe categorias que têm produtos cadastrados
     if (categoria.Produtos.Any())
     {
         <div class="container mb-5">
             <div class="d-flex justify-content-between align-items-center mb-3">
+                
                 <h3 class="text-dark border-left border-primary pl-3 ml-2" style="border-left-width: 5px !important; padding-left: 10px;">
                     @categoria.Nome
                 </h3>
-               
-                <div>
-                    <a class="btn btn-outline-secondary btn-sm" href="#carousel-@categoria.Id" role="button" data-slide="prev">
-                       <i class="fas fa-chevron-left">&lt;</i>
-                    </a>
-                    <a class="btn btn-outline-secondary btn-sm" href="#carousel-@categoria.Id" role="button" data-slide="next">
-                        <i class="fas fa-chevron-right">></i>
-                    </a>
+                
+                <div class="btn-group">
+                    <button class="btn btn-outline-secondary btn-sm" type="button" 
+                            data-target="#carousel-@categoria.Id" data-slide="prev" 
+                            data-bs-target="#carousel-@categoria.Id" data-bs-slide="prev"
+                            title="Anterior">
+                        <strong>&lt;</strong>
+                    </button>
+                    
+                    <button class="btn btn-outline-secondary btn-sm" type="button" 
+                            data-target="#carousel-@categoria.Id" data-slide="next" 
+                            data-bs-target="#carousel-@categoria.Id" data-bs-slide="next"
+                            title="Próximo">
+                        <strong>&gt;</strong>
+                    </button>
                 </div>
             </div>
- 
-            <div id="carousel-@categoria.Id" class="carousel slide" data-ride="carousel" data-interval="false">
+
+            <div id="carousel-@categoria.Id" class="carousel slide" 
+                 data-ride="carousel" data-interval="9000"
+                 data-bs-ride="carousel" data-bs-interval="9000">
+                 
                 <div class="carousel-inner">
- 
+
                     @{
-                        // LÓGICA MÁGICA: Dividimos os produtos em grupos (lotes) de 4
-                        // Se estiver no .NET 6 ou superior, use .Chunk(4)
-                        // Se der erro no .Chunk, me avise que ensino a forma antiga.
-                        var gruposDeProdutos = categoria.Produtos.Chunk(4).ToList();
+                        // LÓGICA: 4 produtos por slide.
+                        // IMPORTANTE: O carrossel SÓ GIRA se tiver mais de 4 produtos cadastrados nessa categoria.
+                        // Se tiver 4 ou menos, ele gera apenas 1 slide e os botões não fazem nada (isso é normal).
+                        var gruposDeProdutos = categoria.Produtos.Chunk(4).ToList(); 
                     }
- 
+
                     @for (int i = 0; i < gruposDeProdutos.Count; i++)
                     {
                         var grupo = gruposDeProdutos[i];
-                       
-                        // O primeiro grupo precisa da classe 'active'
+                        
                         <div class="carousel-item @(i == 0 ? "active" : "")">
                             <div class="row">
                                 @foreach (var produto in grupo)
                                 {
                                     <div class="col-md-3 col-sm-6 mb-3">
                                         <div class="card h-100 shadow-sm border-0">
+                                            
                                             <a asp-controller="Produto" asp-action="Details" asp-route-id="@produto.Id">
                                                 @if (!string.IsNullOrEmpty(produto.Imagem))
                                                 {
-                                                    <img src="~/produtos/@produto.Imagem" class="card-img-top" alt="@produto.Nome"
+                                                    <img src="~/produtos/@produto.Imagem" class="card-img-top" alt="@produto.Nome" 
                                                          style="height: 180px; object-fit: cover;">
                                                 }
                                                 else
                                                 {
-                                                    <img src="https://via.placeholder.com/300x200?text=Produto" class="card-img-top"
+                                                    <img src="https://via.placeholder.com/300x200?text=Produto" class="card-img-top" 
                                                          style="height: 180px; object-fit: cover;">
                                                 }
                                             </a>
- 
+
                                             <div class="card-body p-2 text-center">
                                                 <h6 class="card-title text-truncate" title="@produto.Nome">
                                                     <a asp-controller="Produto" asp-action="Details" asp-route-id="@produto.Id" class="text-dark text-decoration-none">
@@ -74,24 +86,26 @@
                                                     @produto.Preco.ToString("C")
                                                 </p>
                                                 <a asp-controller="Produto" asp-action="Details" asp-route-id="@produto.Id" class="btn btn-sm btn-outline-primary btn-block">
-                                                    Ver
+                                                    Ver Detalhes
                                                 </a>
                                             </div>
+
                                         </div>
                                     </div>
                                 }
                             </div> </div> }
- 
+
                 </div>
             </div>
         </div>
     }
 }
- 
+
 @if (!Model.Any())
 {
-    <div class="alert alert-warning text-center">Nenhum produto cadastrado.</div>
+    <div class="alert alert-warning text-center">Nenhum produto cadastrado para exibição.</div>
 }
+
 
 
 

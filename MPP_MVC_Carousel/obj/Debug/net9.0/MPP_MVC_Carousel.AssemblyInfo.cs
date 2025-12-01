@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MPP_MVC_Carousel")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+84b5c354dabb61165a749e59c9754d3a2d3a9ef5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+86cbee6cd793a8cb660267dd7dafaa77bf417c55")]
 [assembly: System.Reflection.AssemblyProductAttribute("MPP_MVC_Carousel")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MPP_MVC_Carousel")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
