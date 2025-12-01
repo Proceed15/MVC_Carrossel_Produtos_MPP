@@ -1,39 +1,89 @@
 @model MPP_MVC_Carousel.Models.PessoaModel
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Editar Pessoa";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h1>Editar</h1>
+<div class="container-fluid">
+    <h1 class="h3 mb-4 text-gray-800">Editar Cadastro</h1>
 
-<h4>Pessoa</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="Nome" class="control-label"></label>
-                <input asp-for="Nome" class="form-control" />
-                <span asp-validation-for="Nome" class="text-danger"></span>
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Dados da Pessoa</h6>
+                </div>
+                <div class="card-body">
+                    
+                    <form asp-action="Edit" enctype="multipart/form-data">
+                        
+                        <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+                        
+                        <input type="hidden" asp-for="Id" />
+                        <input type="hidden" asp-for="Foto" /> 
+
+                        <div class="form-group">
+                            <label asp-for="Nome" class="control-label font-weight-bold"></label>
+                            <input asp-for="Nome" class="form-control" />
+                            <span asp-validation-for="Nome" class="text-danger"></span>
+                        </div>
+
+                        <hr class="my-4" />
+
+                        <div class="form-group">
+                            <label class="control-label font-weight-bold d-block">Foto Atual</label>
+                            
+                            @if (!string.IsNullOrEmpty(Model.Foto))
+                            {
+                                <div class="mb-3">
+                                    <img src="~/fotos/@Model.Foto" 
+                                         class="img-thumbnail rounded-circle" 
+                                         style="width: 100px; height: 100px; object-fit: cover;" 
+                                         alt="Foto atual" />
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="mb-3 text-muted">
+                                    <i class="fas fa-user-circle fa-3x"></i> <br>
+                                    <small>Nenhuma foto cadastrada</small>
+                                </div>
+                            }
+
+                            <label class="control-label text-primary">
+                                <i class="fas fa-camera"></i> Trocar Foto (Opcional)
+                            </label>
+                            <input type="file" name="Imagem" class="form-control p-1" accept="image/*" />
+                            <span asp-validation-for="Foto" class="text-danger"></span>
+                        </div>
+
+                        <hr />
+
+                        <div class="form-group mt-3">
+                            <button type="submit" class="btn btn-primary btn-icon-split">
+                                <span class="icon text-white-50">
+                                    <i class="fas fa-save"></i>
+                                </span>
+                                <span class="text">Salvar Alterações</span>
+                            </button>
+
+                            <a asp-action="Index" class="btn btn-secondary btn-icon-split ml-2">
+                                <span class="icon text-white-50">
+                                    <i class="fas fa-arrow-left"></i>
+                                </span>
+                                <span class="text">Cancelar</span>
+                            </a>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Foto" class="control-label"></label>
-                <input asp-for="Foto" class="form-control" />
-                <span asp-validation-for="Foto" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+        </div>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
+
+

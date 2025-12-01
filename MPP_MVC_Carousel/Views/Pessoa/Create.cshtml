@@ -1,38 +1,70 @@
 @model MPP_MVC_Carousel.Models.PessoaModel
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Cadastrar Pessoa";
+    // Define o Layout do Admin
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h1>Cadastrar</h1>
+<div class="container-fluid">
 
-<h4>Pessoa</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create" enctype="multipart/form-data">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Nome" class="control-label"></label>
-                <input asp-for="Nome" class="form-control" />
-                <span asp-validation-for="Nome" class="text-danger"></span>
+    <h1 class="h3 mb-4 text-gray-800">Cadastrar Nova Pessoa</h1>
+
+    <div class="row">
+        <div class="col-lg-6"> <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Dados Pessoais</h6>
+                </div>
+                
+                <div class="card-body">
+                    <form asp-action="Create" enctype="multipart/form-data">
+                        
+                        <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+
+                        <div class="form-group">
+                            <label asp-for="Nome" class="control-label font-weight-bold">Nome Completo</label>
+                            <input asp-for="Nome" class="form-control" placeholder="Ex: João da Silva" />
+                            <span asp-validation-for="Nome" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label font-weight-bold">Foto de Perfil</label>
+                            
+                            <input type="file" name="Imagem" class="form-control p-1" accept="image/*" />
+                            
+                            <small class="form-text text-muted">Formatos suportados: JPG, PNG, GIF, BMP.</small>
+                            
+                            <span asp-validation-for="Foto" class="text-danger"></span>
+                        </div>
+
+                        <hr />
+
+                        <div class="form-group mt-3">
+                            <button type="submit" class="btn btn-success btn-icon-split">
+                                <span class="icon text-white-50">
+                                    <i class="fas fa-save"></i>
+                                </span>
+                                <span class="text">Salvar</span>
+                            </button>
+
+                            <a asp-action="Index" class="btn btn-secondary btn-icon-split ml-2">
+                                <span class="icon text-white-50">
+                                    <i class="fas fa-arrow-left"></i>
+                                </span>
+                                <span class="text">Voltar</span>
+                            </a>
+                        </div>
+
+                    </form>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Foto" class="control-label"></label>
-                <input type="file" name="Imagem" />
-                <span asp-validation-for="Foto" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+
+        </div>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
+
+

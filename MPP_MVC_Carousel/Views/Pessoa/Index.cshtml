@@ -2,41 +2,81 @@
 
 @{
     ViewData["Title"] = "Gestão de Pessoas";
+    // Mantém o layout administrativo
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h1>Pessoas</h1>
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h1>Gestão de Pessoas</h1>
+    <a asp-action="Create" class="btn btn-success">
+        <i class="fas fa-plus"></i> Nova Pessoa
+    </a>
+</div>
 
-<p>
-    <a asp-action="Create">Cadastrar Novo</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Nome)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Foto)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-    @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nome)
-            </td>
-            <td>
-                <img src=".\fotos\@{ @item.Foto }" width="50" />
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-    }
-    </tbody>
-</table>
+<div class="card shadow-sm">
+    <div class="card-body">
+        @if (!Model.Any())
+        {
+            <div class="alert alert-info" role="alert">
+                Nenhuma pessoa cadastrada ainda.
+            </div>
+        }
+        else
+        {
+            <table class="table table-hover align-middle">
+                <thead class="thead-dark">
+                    <tr>
+                        <th style="width: 100px;">
+                            @Html.DisplayNameFor(model => model.Foto)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Nome)
+                        </th>
+                        <th class="text-center" style="width: 250px;">Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @if (!string.IsNullOrEmpty(item.Foto))
+                                {
+                                    <img src="~/fotos/@item.Foto" 
+                                         alt="@item.Nome" 
+                                         class="img-thumbnail"
+                                         style="width: 60px; height: 60px; object-fit: cover;" />
+                                }
+                                else
+                                {
+                                    <div class="bg-secondary text-white rounded-circle d-flex justify-content-center align-items-center" 
+                                         style="width: 60px; height: 60px;">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                }
+                            </td>
+                            
+                            <td class="font-weight-bold text-dark">
+                                @Html.DisplayFor(modelItem => item.Nome)
+                            </td>
+                            
+                            <td class="text-center">
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning text-white" title="Editar">
+                                        <i class="fas fa-edit"></i> Editar
+                                    </a>
+                                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info text-white" title="Detalhes">
+                                        <i class="fas fa-info-circle"></i> Detalhes
+                                    </a>
+                                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger" title="Excluir">
+                                        <i class="fas fa-trash"></i> Excluir
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+    </div>
+</div>

@@ -1,30 +1,83 @@
 @model MPP_MVC_Carousel.Models.PessoaModel
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalhes da Pessoa";
+    // Mantendo a consistência com o painel administrativo
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h1>Detalhes</h1>
+<div class="container-fluid">
+    <h1 class="mb-4">Detalhes do Usuário</h1>
 
-<div>
-    <h4>Pessoa</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Nome)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Nome)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Foto)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Foto)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Informações de Cadastro</h6>
+        </div>
+        <div class="card-body">
+            <div class="row align-items-center">
+                
+                <div class="col-md-4 text-center mb-3 mb-md-0">
+                    @if (!string.IsNullOrEmpty(Model.Foto))
+                    {
+                        <img src="~/fotos/@Model.Foto" 
+                             alt="@Model.Nome" 
+                             class="img-fluid rounded-circle img-thumbnail shadow-sm" 
+                             style="width: 200px; height: 200px; object-fit: cover;" />
+                    }
+                    else
+                    {
+                        <div class="bg-light rounded-circle d-inline-flex justify-content-center align-items-center border" 
+                             style="width: 200px; height: 200px;">
+                            <i class="fas fa-user fa-5x text-secondary"></i>
+                        </div>
+                        <p class="text-muted mt-2">Sem foto definida</p>
+                    }
+                </div>
+
+                <div class="col-md-8">
+                    <dl class="row" style="font-size: 1.1em;">
+                        
+                        <dt class="col-sm-3 text-muted">
+                            @Html.DisplayNameFor(model => model.Id)
+                        </dt>
+                        <dd class="col-sm-9">
+                            #@Html.DisplayFor(model => model.Id)
+                        </dd>
+
+                        <dt class="col-sm-3 text-muted">
+                            @Html.DisplayNameFor(model => model.Nome)
+                        </dt>
+                        <dd class="col-sm-9 font-weight-bold text-dark">
+                            <h3>@Html.DisplayFor(model => model.Nome)</h3>
+                        </dd>
+
+                        <dt class="col-sm-3 text-muted">
+                            Nome do Arquivo
+                        </dt>
+                        <dd class="col-sm-9 small text-monospace">
+                            @(Model.Foto ?? "Nenhum")
+                        </dd>
+                    </dl>
+
+                    <hr />
+
+                    <div class="mt-4">
+                        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning btn-icon-split btn-lg mr-2">
+                            <span class="icon text-white-50">
+                                <i class="fas fa-edit"></i>
+                            </span>
+                            <span class="text">Editar Perfil</span>
+                        </a>
+                        
+                        <a asp-action="Index" class="btn btn-secondary btn-icon-split btn-lg">
+                            <span class="icon text-white-50">
+                                <i class="fas fa-arrow-left"></i>
+                            </span>
+                            <span class="text">Voltar</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

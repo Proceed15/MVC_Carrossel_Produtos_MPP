@@ -1,33 +1,75 @@
 @model MPP_MVC_Carousel.Models.PessoaModel
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "Excluir Pessoa";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h1>Deletar</h1>
+<div class="container-fluid">
+    <h1 class="h3 mb-4 text-gray-800">Excluir Cadastro</h1>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Pessoa</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Nome)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Nome)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Foto)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Foto)
-        </dd>
-    </dl>
-    
-    <form asp-action="Delete">
-        <input type="hidden" asp-for="Id" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
-    </form>
+    <div class="card shadow mb-4 border-left-danger">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-danger">
+                <i class="fas fa-exclamation-triangle"></i> Tem certeza que deseja excluir esta pessoa?
+            </h6>
+        </div>
+        
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-3 text-center mb-3">
+                    @if (!string.IsNullOrEmpty(Model.Foto))
+                    {
+                        <img src="~/fotos/@Model.Foto" 
+                             class="img-fluid img-thumbnail shadow-sm" 
+                             style="max-height: 200px; width: auto;" 
+                             alt="Foto de @Model.Nome" />
+                    }
+                    else
+                    {
+                        <div class="alert alert-secondary py-5">
+                            <i class="fas fa-user-slash fa-3x mb-3"></i><br>
+                            Sem foto
+                        </div>
+                    }
+                </div>
+
+                <div class="col-md-9">
+                    <h4 class="mb-3">@Model.Nome</h4>
+                    
+                    <dl class="row">
+                        <dt class="col-sm-3 text-muted">ID do Sistema</dt>
+                        <dd class="col-sm-9">#@Model.Id</dd>
+
+                        <dt class="col-sm-3 text-muted">Arquivo de Foto</dt>
+                        <dd class="col-sm-9 text-monospace small">@(Model.Foto ?? "Nenhum")</dd>
+                    </dl>
+
+                    <div class="alert alert-warning mt-3">
+                        <small><strong>Atenção:</strong> Esta ação não pode ser desfeita. O arquivo de imagem vinculado também será removido do servidor.</small>
+                    </div>
+
+                    <hr />
+                    
+                    <form asp-action="Delete">
+                        <input type="hidden" asp-for="Id" />
+                        
+                        <button type="submit" class="btn btn-danger btn-icon-split btn-lg">
+                            <span class="icon text-white-50">
+                                <i class="fas fa-trash"></i>
+                            </span>
+                            <span class="text">Confirmar Exclusão</span>
+                        </button>
+                        
+                        <a asp-action="Index" class="btn btn-secondary btn-icon-split btn-lg ml-2">
+                            <span class="icon text-white-50">
+                                <i class="fas fa-times"></i>
+                            </span>
+                            <span class="text">Cancelar</span>
+                        </a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
