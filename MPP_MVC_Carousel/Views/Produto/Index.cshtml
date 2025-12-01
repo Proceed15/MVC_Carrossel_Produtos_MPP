@@ -1,0 +1,70 @@
+@model IEnumerable<MPP_MVC_Carousel.Models.ProdutoModel>
+@{
+    ViewData["Title"] = "Gestão de Produtos";
+    // Força o uso do Layout Admin
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml"; 
+}
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h1>Produtos</h1>
+    <a asp-action="Create" class="btn btn-success">+ Novo Produto</a>
+</div>
+
+<div class="card shadow-sm">
+    <div class="card-body">
+        <table class="table table-hover align-middle">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Imagem</th> <th>@Html.DisplayNameFor(model => model.Nome)</th>
+                    <th>@Html.DisplayNameFor(model => model.Preco)</th>
+                    <th>Categoria</th>
+                    <th class="text-center">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td style="width: 100px;">
+                            @if (!string.IsNullOrEmpty(item.Imagem))
+                            {
+                                <img src="~/produtos/@item.Imagem" 
+                                     alt="@item.Nome" 
+                                     class="img-thumbnail"
+                                     style="width: 80px; height: 80px; object-fit: cover;" />
+                            }
+                            else
+                            {
+                                <span class="text-muted" style="font-size: 0.8rem;">Sem img</span>
+                            }
+                        </td>
+
+                        <td class="align-middle">
+                            <strong>@Html.DisplayFor(modelItem => item.Nome)</strong>
+                        </td>
+                        <td class="align-middle text-success font-weight-bold">
+                            @item.Preco.ToString("C")
+                        </td>
+                        <td class="align-middle">
+                            @if (item.Categoria != null)
+                            {
+                                <span class="badge badge-info">@item.Categoria.Nome</span>
+                            }
+                            else
+                            {
+                                <span class="badge badge-secondary">Sem Categoria</span>
+                            }
+                        </td>
+                        <td class="align-middle text-center">
+                            <div class="btn-group btn-group-sm">
+                                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning text-white">Editar</a>
+                                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info text-white">Ver</a>
+                                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Excluir</a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

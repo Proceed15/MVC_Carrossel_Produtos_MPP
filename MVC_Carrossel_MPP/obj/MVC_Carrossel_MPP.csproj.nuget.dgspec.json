@@ -1,31 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\0031432412016\\desktop\\MVC_Carrossel_Produtos_MPP\\MVC_Carrossel_MPP\\MVC_Carrossel_MPP.csproj": {}
+    "C:\\Users\\JRLSF\\Desktop\\MVC_Carrossel_Produtos_MPP\\MVC_Carrossel_MPP\\MVC_Carrossel_MPP.csproj": {}
   },
   "projects": {
-    "C:\\Users\\0031432412016\\desktop\\MVC_Carrossel_Produtos_MPP\\MVC_Carrossel_MPP\\MVC_Carrossel_MPP.csproj": {
+    "C:\\Users\\JRLSF\\Desktop\\MVC_Carrossel_Produtos_MPP\\MVC_Carrossel_MPP\\MVC_Carrossel_MPP.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\0031432412016\\desktop\\MVC_Carrossel_Produtos_MPP\\MVC_Carrossel_MPP\\MVC_Carrossel_MPP.csproj",
+        "projectUniqueName": "C:\\Users\\JRLSF\\Desktop\\MVC_Carrossel_Produtos_MPP\\MVC_Carrossel_MPP\\MVC_Carrossel_MPP.csproj",
         "projectName": "MVC_Carrossel_MPP",
-        "projectPath": "C:\\Users\\0031432412016\\desktop\\MVC_Carrossel_Produtos_MPP\\MVC_Carrossel_MPP\\MVC_Carrossel_MPP.csproj",
-        "packagesPath": "C:\\Users\\0031432412016\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\0031432412016\\desktop\\MVC_Carrossel_Produtos_MPP\\MVC_Carrossel_MPP\\obj\\",
+        "projectPath": "C:\\Users\\JRLSF\\Desktop\\MVC_Carrossel_Produtos_MPP\\MVC_Carrossel_MPP\\MVC_Carrossel_MPP.csproj",
+        "packagesPath": "C:\\Users\\JRLSF\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\JRLSF\\Desktop\\MVC_Carrossel_Produtos_MPP\\MVC_Carrossel_MPP\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\0031432412016\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\JRLSF\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net9.0": {
@@ -43,7 +38,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net9.0": {
@@ -67,7 +62,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

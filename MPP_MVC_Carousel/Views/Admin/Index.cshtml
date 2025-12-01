@@ -1,0 +1,40 @@
+@{
+    // Define o Layout Admin
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="card text-white bg-primary mb-3">
+            <div class="card-header">Produtos Cadastrados</div>
+            <div class="card-body">
+                <h2 class="card-title">@ViewBag.TotalProdutos</h2>
+                <p class="card-text">Itens disponíveis na vitrine.</p>
+                <a asp-controller="Produto" asp-action="Index" class="btn btn-light btn-sm text-primary">Gerenciar</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card text-white bg-success mb-3">
+            <div class="card-header">Categorias</div>
+            <div class="card-body">
+                <h2 class="card-title">@ViewBag.TotalCategorias</h2>
+                <p class="card-text">Seções da loja.</p>
+                <a asp-controller="Categoria" asp-action="Index" class="btn btn-light btn-sm text-success">Gerenciar</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card text-white bg-warning mb-3">
+            <div class="card-header">Usuários/Pessoas</div>
+            <div class="card-body">
+                <h2 class="card-title">@ViewBag.TotalPessoas</h2>
+                <p class="card-text">Total de cadastros.</p>
+                <a asp-controller="Pessoa" asp-action="Index" class="btn btn-light btn-sm text-warning">Gerenciar</a>
+            </div>
+        </div>
+    </div>
+</div>

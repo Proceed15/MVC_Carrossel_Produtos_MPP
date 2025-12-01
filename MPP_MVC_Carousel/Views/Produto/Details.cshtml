@@ -1,0 +1,51 @@
+@model MPP_MVC_Carousel.Models.ProdutoModel
+
+<div class="container mt-5">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Vitrine</a></li>
+            <li class="breadcrumb-item active" aria-current="page">@Model.Categoria.Nome</li>
+        </ol>
+    </nav>
+
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <div class="card shadow-sm">
+                @if (!string.IsNullOrEmpty(Model.Imagem))
+                {
+                    <img src="~/produtos/@Model.Imagem" class="img-fluid rounded" alt="@Model.Nome" style="width: 100%; object-fit: cover;" />
+                }
+                else
+                {
+                    <img src="https://via.placeholder.com/600x400?text=Sem+Imagem" class="img-fluid rounded" alt="Sem Imagem" />
+                }
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <h1 class="display-5">@Model.Nome</h1>
+            <p class="text-muted">Categoria: <strong>@Model.Categoria.Nome</strong></p>
+            
+            <h3 class="text-primary my-4">
+                @Model.Preco.ToString("C")
+            </h3>
+
+            <button class="btn btn-success btn-lg btn-block mb-3">
+                <i class="fa fa-shopping-cart"></i> Comprar Agora
+            </button>
+            
+            <hr />
+
+            <h5>Descrição do Produto</h5>
+            <p>
+                Este é um excelente produto da categoria @Model.Categoria.Nome. 
+                Aproveite o preço promocional!
+            </p>
+
+            <div class="mt-5">
+                <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-outline-secondary btn-sm">Editar (Admin)</a>
+                <a asp-controller="Home" asp-action="Index" class="btn btn-outline-dark btn-sm">Voltar para Vitrine</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+@model IEnumerable<MPP_MVC_Carousel.Models.CategoriaModel>
+
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Categorias
+    </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" asp-controller="Produto" asp-action="Index">Todos os Produtos</a>
+        <div class="dropdown-divider"></div>
+
+        @foreach (var item in Model)
+        {
+            @* O title exibe a descrição quando passa o mouse *@
+            <a class="dropdown-item" 
+               asp-controller="Produto" 
+               asp-action="PorCategoria" 
+               asp-route-id="@item.Id"
+               title="@item.Descricao">
+                @item.Nome
+            </a>
+        }
+    </div>
+</li>
