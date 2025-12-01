@@ -9,81 +9,81 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = MeuSiteMVC
 build_property.RootNamespace = MeuSiteMVC
-build_property.ProjectDir = C:\Users\0031432412001\desktop\MVC_Carrossel_Produtos_MPP\MeuSiteMVC\
+build_property.ProjectDir = C:\Users\JRLSF\Desktop\MVC_Carrossel_Produtos_MPP\MeuSiteMVC\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 9.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\0031432412001\desktop\MVC_Carrossel_Produtos_MPP\MeuSiteMVC
+build_property.MSBuildProjectDirectory = C:\Users\JRLSF\Desktop\MVC_Carrossel_Produtos_MPP\MeuSiteMVC
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/0031432412001/desktop/MVC_Carrossel_Produtos_MPP/MeuSiteMVC/Views/AdminPedidos/Delete.cshtml]
+[C:/Users/JRLSF/Desktop/MVC_Carrossel_Produtos_MPP/MeuSiteMVC/Views/AdminPedidos/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5QZWRpZG9zXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/0031432412001/desktop/MVC_Carrossel_Produtos_MPP/MeuSiteMVC/Views/AdminPedidos/Edit.cshtml]
+[C:/Users/JRLSF/Desktop/MVC_Carrossel_Produtos_MPP/MeuSiteMVC/Views/AdminPedidos/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5QZWRpZG9zXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/0031432412001/desktop/MVC_Carrossel_Produtos_MPP/MeuSiteMVC/Views/AdminPedidos/Index.cshtml]
+[C:/Users/JRLSF/Desktop/MVC_Carrossel_Produtos_MPP/MeuSiteMVC/Views/AdminPedidos/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5QZWRpZG9zXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/0031432412001/desktop/MVC_Carrossel_Produtos_MPP/MeuSiteMVC/Views/AdminProdutos/Create.cshtml]
+[C:/Users/JRLSF/Desktop/MVC_Carrossel_Produtos_MPP/MeuSiteMVC/Views/AdminProdutos/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Qcm9kdXRvc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/0031432412001/desktop/MVC_Carrossel_Produtos_MPP/MeuSiteMVC/Views/AdminProdutos/Delete.cshtml]
+[C:/Users/JRLSF/Desktop/MVC_Carrossel_Produtos_MPP/MeuSiteMVC/Views/AdminProdutos/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Qcm9kdXRvc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/0031432412001/desktop/MVC_Carrossel_Produtos_MPP/MeuSiteMVC/Views/AdminProdutos/Edit.cshtml]
+[C:/Users/JRLSF/Desktop/MVC_Carrossel_Produtos_MPP/MeuSiteMVC/Views/AdminProdutos/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Qcm9kdXRvc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/0031432412001/desktop/MVC_Carrossel_Produtos_MPP/MeuSiteMVC/Views/AdminProdutos/Index.cshtml]
+[C:/Users/JRLSF/Desktop/MVC_Carrossel_Produtos_MPP/MeuSiteMVC/Views/AdminProdutos/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Qcm9kdXRvc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/0031432412001/desktop/MVC_Carrossel_Produtos_MPP/MeuSiteMVC/Views/Admin/CadastrarCategoria.cshtml]
+[C:/Users/JRLSF/Desktop/MVC_Carrossel_Produtos_MPP/MeuSiteMVC/Views/Admin/CadastrarCategoria.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ2FkYXN0cmFyQ2F0ZWdvcmlhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/0031432412001/desktop/MVC_Carrossel_Produtos_MPP/MeuSiteMVC/Views/Admin/CadastrarProduto.cshtml]
+[C:/Users/JRLSF/Desktop/MVC_Carrossel_Produtos_MPP/MeuSiteMVC/Views/Admin/CadastrarProduto.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ2FkYXN0cmFyUHJvZHV0by5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/0031432412001/desktop/MVC_Carrossel_Produtos_MPP/MeuSiteMVC/Views/Home/Contatos.cshtml]
+[C:/Users/JRLSF/Desktop/MVC_Carrossel_Produtos_MPP/MeuSiteMVC/Views/Home/Contatos.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250YXRvcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/0031432412001/desktop/MVC_Carrossel_Produtos_MPP/MeuSiteMVC/Views/Home/Index.cshtml]
+[C:/Users/JRLSF/Desktop/MVC_Carrossel_Produtos_MPP/MeuSiteMVC/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/0031432412001/desktop/MVC_Carrossel_Produtos_MPP/MeuSiteMVC/Views/Home/Privacy.cshtml]
+[C:/Users/JRLSF/Desktop/MVC_Carrossel_Produtos_MPP/MeuSiteMVC/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/0031432412001/desktop/MVC_Carrossel_Produtos_MPP/MeuSiteMVC/Views/Produtos/Detalhes.cshtml]
+[C:/Users/JRLSF/Desktop/MVC_Carrossel_Produtos_MPP/MeuSiteMVC/Views/Produtos/Detalhes.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHV0b3NcRGV0YWxoZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/0031432412001/desktop/MVC_Carrossel_Produtos_MPP/MeuSiteMVC/Views/Produtos/Index.cshtml]
+[C:/Users/JRLSF/Desktop/MVC_Carrossel_Produtos_MPP/MeuSiteMVC/Views/Produtos/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHV0b3NcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/0031432412001/desktop/MVC_Carrossel_Produtos_MPP/MeuSiteMVC/Views/_ViewImports.cshtml]
+[C:/Users/JRLSF/Desktop/MVC_Carrossel_Produtos_MPP/MeuSiteMVC/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/0031432412001/desktop/MVC_Carrossel_Produtos_MPP/MeuSiteMVC/Views/_ViewStart.cshtml]
+[C:/Users/JRLSF/Desktop/MVC_Carrossel_Produtos_MPP/MeuSiteMVC/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/0031432412001/desktop/MVC_Carrossel_Produtos_MPP/MeuSiteMVC/Views/Shared/_Layout.cshtml]
+[C:/Users/JRLSF/Desktop/MVC_Carrossel_Produtos_MPP/MeuSiteMVC/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-ul34cy1ifo

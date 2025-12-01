@@ -10,6 +10,11 @@ namespace MeuSiteMVC.Controllers
             return View();
         }
 
+        public IActionResult Categorias()
+        {
+            return View();
+        }
+
         public IActionResult Contatos()
         {
             return View();

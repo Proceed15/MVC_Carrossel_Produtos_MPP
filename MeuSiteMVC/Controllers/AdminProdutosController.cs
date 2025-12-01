@@ -32,6 +32,24 @@ namespace MeuSiteMVC.Controllers
             return View(produto);
         }
 
+        [HttpPost]
+        public ActionResult SaveData(Produto produto)
+        {
+
+            if (produto.Nome != null && produto.UploadImage != null)
+            {
+                string fileName = Path.GetFileNameWithoutExtension(produto.UploadImage.FileName);
+                string extension = Path.GetExtension(produto.UploadImage.FileName);
+                fileName = fileName + DateTime.Now.ToString("yymmssff") + extension;
+                produto.ImagemUrl = fileName;
+                produto.UploadImage.SaveAs(Path.Combine(Server.MapPath("~/AppFile/Images"),fileName));
+                db.Products.Add(produto);
+                db.SaveChanges();
+            }
+            var result = "Successfully Added";
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
+
         public IActionResult Edit(int id)
         {
             var produto = DadosEmMemoria.Produtos.FirstOrDefault(p => p.Id == id);
