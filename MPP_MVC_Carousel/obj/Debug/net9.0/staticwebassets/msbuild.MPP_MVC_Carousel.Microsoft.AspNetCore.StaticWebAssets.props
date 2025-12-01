@@ -1206,6 +1206,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\MPP_MVC_Carousel.4v1f9kjh2k.bundle.scp.css'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\produtos\5daf4701-cc88-419e-a112-5e04c877cc35.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>MPP_MVC_Carousel</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/MPP_MVC_Carousel</BasePath>
+      <RelativePath>produtos/5daf4701-cc88-419e-a112-5e04c877cc35.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>bz7iav6ntq</Fingerprint>
+      <Integrity>GcGhkajWo8TwONSSijtfwWjE/4AQe8/W/TPVD9KXdWI=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\produtos\5daf4701-cc88-419e-a112-5e04c877cc35.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\produtos\a906ce6a-0c6e-40da-b387-e52d67a48aa5.jpg'))">
       <SourceType>Package</SourceType>
       <SourceId>MPP_MVC_Carousel</SourceId>

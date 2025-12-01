@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "UG8/DX7pstMwOOXIniWhCi8tFqzdrinbeGS6zvrhJao=",
+  "Hash": "qeH4NBtvaNoWLkhuYbrAPyr/wDk88Sg8HciYyH3dWtE=",
   "Source": "MPP_MVC_Carousel",
   "BasePath": "_content/MPP_MVC_Carousel",
   "Mode": "Default",
@@ -2787,6 +2787,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\JRLSF\\Desktop\\MVC_Carrossel_Produtos_MPP\\MPP_MVC_Carousel\\wwwroot\\produtos\\5daf4701-cc88-419e-a112-5e04c877cc35.jpg",
+      "SourceId": "MPP_MVC_Carousel",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\JRLSF\\Desktop\\MVC_Carrossel_Produtos_MPP\\MPP_MVC_Carousel\\wwwroot\\",
+      "BasePath": "_content/MPP_MVC_Carousel",
+      "RelativePath": "produtos/5daf4701-cc88-419e-a112-5e04c877cc35#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "bz7iav6ntq",
+      "Integrity": "GcGhkajWo8TwONSSijtfwWjE/4AQe8/W/TPVD9KXdWI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\produtos\\5daf4701-cc88-419e-a112-5e04c877cc35.jpg"
     },
     {
       "Identity": "C:\\Users\\JRLSF\\Desktop\\MVC_Carrossel_Produtos_MPP\\MPP_MVC_Carousel\\wwwroot\\produtos\\a906ce6a-0c6e-40da-b387-e52d67a48aa5.jpg",
@@ -22229,6 +22250,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-iDoRp5n7liQ2qDIhdDjqLgTml9gM3J+rRQNR381qQDA="
+        }
+      ]
+    },
+    {
+      "Route": "produtos/5daf4701-cc88-419e-a112-5e04c877cc35.bz7iav6ntq.jpg",
+      "AssetFile": "C:\\Users\\JRLSF\\Desktop\\MVC_Carrossel_Produtos_MPP\\MPP_MVC_Carousel\\wwwroot\\produtos\\5daf4701-cc88-419e-a112-5e04c877cc35.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "153418"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"GcGhkajWo8TwONSSijtfwWjE/4AQe8/W/TPVD9KXdWI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 01 Dec 2025 06:02:23 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "bz7iav6ntq"
+        },
+        {
+          "Name": "label",
+          "Value": "produtos/5daf4701-cc88-419e-a112-5e04c877cc35.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-GcGhkajWo8TwONSSijtfwWjE/4AQe8/W/TPVD9KXdWI="
+        }
+      ]
+    },
+    {
+      "Route": "produtos/5daf4701-cc88-419e-a112-5e04c877cc35.jpg",
+      "AssetFile": "C:\\Users\\JRLSF\\Desktop\\MVC_Carrossel_Produtos_MPP\\MPP_MVC_Carousel\\wwwroot\\produtos\\5daf4701-cc88-419e-a112-5e04c877cc35.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "153418"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"GcGhkajWo8TwONSSijtfwWjE/4AQe8/W/TPVD9KXdWI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 01 Dec 2025 06:02:23 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-GcGhkajWo8TwONSSijtfwWjE/4AQe8/W/TPVD9KXdWI="
         }
       ]
     },

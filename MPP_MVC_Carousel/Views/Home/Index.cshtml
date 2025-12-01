@@ -4,62 +4,91 @@
     ViewData["Title"] = "Vitrine";
 }
 
-<div class="text-center p-5 bg-light mb-4 rounded">
-    <h1 class="display-4">Bem-vindo à Nossa Loja</h1>
-    <p class="lead">Confira nossos produtos separados por categorias exclusivas.</p>
+<div class="jumbotron text-center bg-light p-5 mb-5 rounded">
+    <h1 class="display-4">Bem-vindo à Loja</h1>
+    <p class="lead">As melhores ofertas separadas especialmente para você.</p>
 </div>
 
 @foreach (var categoria in Model)
 {
-    <div class="category-section mb-5">
-        <div class="d-flex justify-content-between align-items-center border-bottom mb-3 pb-2">
-            <h2 class="text-dark">@categoria.Nome</h2>
-            <small class="text-muted">@categoria.Descricao</small>
-        </div>
-
-        <div class="row">
-            @foreach (var produto in categoria.Produtos)
-            {
-                <div class="col-md-3 col-sm-6 mb-4">
-                    <div class="card h-100 shadow-sm border-0">
-                        <a asp-controller="Produto" asp-action="Details" asp-route-id="@produto.Id">
-                            @if (!string.IsNullOrEmpty(produto.Imagem))
-                            {
-                                <img src="~/produtos/@produto.Imagem" class="card-img-top" alt="@produto.Nome" style="height: 200px; object-fit: cover;">
-                            }
-                            else
-                            {
-                                <img src="https://via.placeholder.com/300x200?text=Produto" class="card-img-top" style="height: 200px; object-fit: cover;">
-                            }
-                        </a>
-
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">
-                                <a asp-controller="Produto" asp-action="Details" asp-route-id="@produto.Id" class="text-dark text-decoration-none">
-                                    @produto.Nome
-                                </a>
-                            </h5>
-                            <p class="card-text text-primary font-weight-bold mt-auto">
-                                @produto.Preco.ToString("C")
-                            </p>
-                            <a asp-controller="Produto" asp-action="Details" asp-route-id="@produto.Id" class="btn btn-outline-primary btn-sm mt-2">
-                                Ver Detalhes
-                            </a>
-                        </div>
-                    </div>
+    // Só exibe categorias que têm produtos
+    if (categoria.Produtos.Any())
+    {
+        <div class="container mb-5">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h3 class="text-dark border-left border-primary pl-3 ml-2" style="border-left-width: 5px !important; padding-left: 10px;">
+                    @categoria.Nome
+                </h3>
+                
+                <div>
+                    <a class="btn btn-outline-secondary btn-sm" href="#carousel-@categoria.Id" role="button" data-slide="prev">
+                        <i class="fas fa-chevron-left"></i>
+                    </a>
+                    <a class="btn btn-outline-secondary btn-sm" href="#carousel-@categoria.Id" role="button" data-slide="next">
+                        > <i class="fas fa-chevron-right"></i>
+                    </a>
                 </div>
-            }
+            </div>
+
+            <div id="carousel-@categoria.Id" class="carousel slide" data-ride="carousel" data-interval="false">
+                <div class="carousel-inner">
+
+                    @{
+                        // LÓGICA MÁGICA: Dividimos os produtos em grupos (lotes) de 4
+                        // Se estiver no .NET 6 ou superior, use .Chunk(4)
+                        // Se der erro no .Chunk, me avise que ensino a forma antiga.
+                        var gruposDeProdutos = categoria.Produtos.Chunk(4).ToList(); 
+                    }
+
+                    @for (int i = 0; i < gruposDeProdutos.Count; i++)
+                    {
+                        var grupo = gruposDeProdutos[i];
+                        
+                        // O primeiro grupo precisa da classe 'active'
+                        <div class="carousel-item @(i == 0 ? "active" : "")">
+                            <div class="row">
+                                @foreach (var produto in grupo)
+                                {
+                                    <div class="col-md-3 col-sm-6 mb-3">
+                                        <div class="card h-100 shadow-sm border-0">
+                                            <a asp-controller="Produto" asp-action="Details" asp-route-id="@produto.Id">
+                                                @if (!string.IsNullOrEmpty(produto.Imagem))
+                                                {
+                                                    <img src="~/produtos/@produto.Imagem" class="card-img-top" alt="@produto.Nome" 
+                                                         style="height: 180px; object-fit: cover;">
+                                                }
+                                                else
+                                                {
+                                                    <img src="https://via.placeholder.com/300x200?text=Produto" class="card-img-top" 
+                                                         style="height: 180px; object-fit: cover;">
+                                                }
+                                            </a>
+
+                                            <div class="card-body p-2 text-center">
+                                                <h6 class="card-title text-truncate" title="@produto.Nome">
+                                                    <a asp-controller="Produto" asp-action="Details" asp-route-id="@produto.Id" class="text-dark text-decoration-none">
+                                                        @produto.Nome
+                                                    </a>
+                                                </h6>
+                                                <p class="card-text text-primary font-weight-bold mb-1">
+                                                    @produto.Preco.ToString("C")
+                                                </p>
+                                                <a asp-controller="Produto" asp-action="Details" asp-route-id="@produto.Id" class="btn btn-sm btn-outline-primary btn-block">
+                                                    Ver
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            </div> </div> }
+
+                </div>
+            </div>
         </div>
-    </div>
+    }
 }
 
 @if (!Model.Any())
 {
-    <div class="alert alert-warning text-center">
-        Nenhum produto ou categoria cadastrado para exibição na vitrine.
-    </div>
+    <div class="alert alert-warning text-center">Nenhum produto cadastrado.</div>
 }
-
-
-
-
